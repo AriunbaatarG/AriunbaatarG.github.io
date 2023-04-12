@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Bug World</title>
+  </head>
+  <body>
+    <div id="entry">
+      <div class="outer-container">
+        <div class="inner-container">
+          <h1>Bug World</h1>
+          <br />
+          <form action="">
+            <label for="input1">
+              Please upload a world map file:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fa-solid fa-file-arrow-up"></i>
+            </label>
+            <input type="file" name="input1" id="input1" /><br />
+
+            <label for="input2">
+              Please upload a bug assembler code source code file
+              #1&nbsp;&nbsp;&nbsp;
+              <i class="fa-solid fa-file-arrow-up"></i>
+            </label>
+            <input type="file" name="input2" id="input2" /><br />
+
+            <label for="input3">
+              Please upload a bug assembler code source code file
+              #2&nbsp;&nbsp;&nbsp;
+              <i class="fa-solid fa-file-arrow-up"></i>
+            </label>
+            <input type="file" name="input3" id="input3" /><br />
+
+            <label for="input4"> Please select the number of iterations </label>
+            <input type="number" name="input4" value="500" id="input4" /><br />
+
+            <label for="input5">
+              Do you want to log the results of the session?
+            </label>
+            <input type="checkbox" name="input5" id="input5" /><br />
+            <br />
+          </form>
+
+          <button
+            class="btn btn-outline-dark"
+            value="Next"
+            name="Next"
+            id="but"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="main-page">
+      <div class="main-container">
+        <div class="left">
+          <canvas id="canvas" width="800" height="500" />
+        </div>
+        <div class="right">
+          <button class="btn btn-light btn-lg" id="option">Options</button>
+          <button class="btn btn-light btn-lg" id="quit-btn">Quit</button>
+          <div id="stat">
+            <p class="info">Iterations:<span id="iterations"></span></p>
+            <p class="info">
+              Amount of undetected food:<span id="food_num"></span>
+            </p>
+            <p class="info">
+              Red bugs remaining: <span id="red_remain"></span>
+            </p>
+            <p class="info">Red bugs killed: <span id="red_killed"></span></p>
+            <p class="info">
+              Food brought home for red bugs:<span id="food_red"></span>
+            </p>
+            <p class="info">
+              Black bugs remaining:<span id="black_remain"></span>
+            </p>
+            <p class="info">
+              Black bugs killed: <span id="black_killed"></span>
+            </p>
+            <p class="info">
+              Food brought home for black bugs:<span id="food_black"></span>
+            </p>
+          </div>
+        </div>
+        <div class="bottom">
+          <div id="log"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="options-div">
+      <div class="outer-container">
+        <div class="inner-container">
+          <h1>Options</h1>
+          <br /><br /><br />
+          <form action="">
+            <label for="bug1"> Change bugs's color for #1: </label>
+            <input type="text" name="bug1" id="bug1" />
+            <br />
+            <label for="bug2"> Change bugs's color for #2: </label>
+            <input type="text" name="bug2" id="bug2" />
+            <br />
+            <label for="iter"> Number of Iterations </label>
+
+            <input type="number" name="iter" id="iter" value="500" />
+            <br />
+            <label for="time"> The duration of a tick in seconds </label>
+            <input type="number" name="time" id="time" value="10" />
+          </form>
+          <button class="btn btn-dark btn-lg" id="back">Back to game</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="quit-div">
+      <div class="outer-container">
+        <div class="inner-container">
+          <h1>Do you really want to quit?</h1>
+          <div class="quit-btn">
+            <button class="btn btn-primary btn-lg" id="quit-yes">
+              <a href="./index.html">Yes</a>
+            </button>
+            <button class="btn btn-primary btn-lg" id="quit-no">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./modules/bug_input.js" type="module"></script>
+    <script src="./modules/bugworld.js" type="module"></script>
+  </body>
+</html>
